@@ -1,9 +1,8 @@
 const express = require('express')
-// const Task = require('./models/task')
-// const User = require('./models/user')
+require('./db/mongoose')
 const userRouter = require('./resources/user')
 const taskRouter = require('./resources/task')
-// const multer = require('multer')
+
 
 
 const app = express()
