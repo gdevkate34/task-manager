@@ -24,6 +24,10 @@ router.post('/users', async (req, res) => {
     }
 })
  
+ //get users list in db
+ router.get('/users/me', auth ,async (req,res)=>{
+    res.send(req.user)
+})
  
  //get a user by its id
  router.get('/users/:id',async (req,res)=>{
@@ -149,9 +153,6 @@ router.post('/users/logoutAll',auth,async (req,res)=>{
     }
 })
 
- //get users list in db
- router.get('/users', auth ,async (req,res)=>{
-     res.send(req.user)
- })
+
 
  module.exports = router

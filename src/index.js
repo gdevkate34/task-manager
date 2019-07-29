@@ -3,7 +3,7 @@ const express = require('express')
 // const User = require('./models/user')
 const userRouter = require('./resources/user')
 const taskRouter = require('./resources/task')
-const multer = require('multer')
+// const multer = require('multer')
 
 
 const app = express()
@@ -19,16 +19,6 @@ app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
  
-const upload = multer({
-    dest:'images'
-})
-
-//upload files to database
-app.post('/upload',upload.single('upload'),(req,res)=>{
-    res.send()
-})
-
-
 
 app.listen(port,()=>{
     console.log('Server is up on port '+port)
